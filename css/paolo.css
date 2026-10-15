@@ -1,0 +1,62 @@
+/* Paolo Tabacaria — paleta e tipografia sobre a base do layout */
+:root{
+  --ink:#0c0a0a; --ink-2:#161212; --plum:#ff4a1c; --plum-2:#ff6b3d; --plum-3:#2a0f08;
+  --rose:#ff7a4d; --rose-2:#ff9a73; --blush:#ffe6dc; --gold:#ff5a2a;
+  --cream:#f6f3ef; --cream-2:#ece6df; --sand:#dcd3ca; --text:#1b1716; --muted:#6f6763; --line:#e2dbd3;
+  --serif:"Bebas Neue","Oswald",Impact,"Arial Narrow",sans-serif;
+  --sans:"Poppins",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+.display{font-weight:400;letter-spacing:.005em;line-height:.92;text-transform:uppercase}
+.display em{font-style:normal;color:var(--plum)}
+.hero{background:var(--ink) url(../video/hero-m-poster.webp) center/cover no-repeat}
+@media (min-width:768px){.hero{background-image:url(../video/hero-d-poster.webp)}}
+.hero__shade{background:linear-gradient(180deg,rgba(12,10,10,.55) 0%,rgba(12,10,10,.05) 35%,rgba(12,10,10,.35) 60%,rgba(12,10,10,.92) 100%)}
+.hero__title{font:400 clamp(92px,24vw,260px)/.82 var(--serif);letter-spacing:.01em}
+.hero__title .dot{display:inline-block;width:.16em;height:.16em;border-radius:50%;background:var(--plum);margin-left:.03em}
+.hero__tag{font:500 clamp(14px,1.6vw,18px)/1.4 var(--sans);letter-spacing:.32em;text-transform:uppercase;font-style:normal}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand__logo{font:400 30px/1 var(--serif);letter-spacing:.12em;color:#fff}
+.brand__logo b{color:var(--plum);font-weight:400}
+.brand__sub{font:600 10px/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;opacity:.75}
+.btn--glow{background:var(--plum);color:#fff;box-shadow:0 10px 40px -10px rgba(255,74,28,.8)}
+.ticker{background:var(--plum)}
+.ticker span{font-family:var(--serif);font-size:22px;letter-spacing:.06em;text-transform:uppercase}
+.card__name{font:500 15px/1.25 var(--sans)}
+.card__price{font:500 15px/1.2 var(--sans);color:var(--muted)}
+.card__soon{display:inline-block;margin-top:auto;padding-top:6px;font:600 13px/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--plum)}
+.card__img img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease-out)}
+.card:hover .card__img img{transform:scale(1.05)}
+.card__btns{display:flex;flex-direction:column;gap:6px;margin-top:10px}
+.card__wa{display:flex;align-items:center;justify-content:center;gap:6px;height:40px;border-radius:999px;background:var(--wa);color:#fff;text-decoration:none;font-weight:600;font-size:13.5px}
+.card__wa svg{width:16px;height:16px}
+.card__buy{height:36px;border-radius:999px;border:1px dashed var(--muted);background:transparent;color:var(--muted);font-size:12.5px}
+.card__buy[disabled]{cursor:not-allowed;opacity:.7}
+.card__code{font-weight:600}
+/* aviso legal */
+.warn-bar{background:#000;color:#fff;text-align:center;font:600 12px/1.4 var(--sans);letter-spacing:.04em;padding:10px var(--pad);border-top:2px solid var(--plum)}
+.warn-bar b{color:var(--plum)}
+.ms-warning{margin:8px 0;padding:14px 16px;border:2px solid #fff;color:#fff;font:700 13px/1.45 var(--sans);text-transform:uppercase;letter-spacing:.03em;background:#000}
+/* portão 18+ */
+.agegate{position:fixed;inset:0;z-index:999;display:grid;place-items:center;padding:24px;background:radial-gradient(70% 60% at 50% 30%,rgba(255,74,28,.28),transparent 70%),#0c0a0a;color:#fff;text-align:center}
+.agegate__box{max-width:440px}
+.agegate__logo{font:400 84px/.9 var(--serif);letter-spacing:.08em}
+.agegate__logo b{color:var(--plum);font-weight:400}
+.agegate h2{font:400 34px/1 var(--serif);letter-spacing:.04em;margin:26px 0 10px}
+.agegate p{color:rgba(255,255,255,.75);margin:0 0 24px;font-size:14.5px}
+.agegate__btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.agegate__btns button{height:50px;padding:0 26px;border-radius:999px;border:1px solid rgba(255,255,255,.4);background:transparent;color:#fff;font-weight:600}
+.agegate__btns .yes{background:var(--plum);border-color:var(--plum)}
+.agegate__no{color:#ff9a73!important;font-weight:600}
+.agegate small{display:block;margin-top:26px;font-size:11.5px;color:rgba(255,255,255,.5)}
+html.gate-open body{overflow:hidden}
+/* modal produto */
+.pm__gallery img{width:100%;max-height:70vh;object-fit:contain;background:var(--cream-2)}
+.pm__title{font:400 40px/1 var(--serif);color:var(--ink);text-transform:uppercase}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease-out),transform .9s var(--ease-out)}
+.reveal.in{opacity:1;transform:none}
+.cats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:40px}
+@media(min-width:900px){.cats{grid-template-columns:repeat(4,1fr)}}
+.cats figure{margin:0;position:relative;aspect-ratio:3/4;border-radius:22px;overflow:hidden}
+.cats img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease-out)}
+.cats figure:hover img{transform:scale(1.06)}
+.cats figcaption{position:absolute;left:14px;bottom:12px;font:400 30px/1 var(--serif);color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.6)}
